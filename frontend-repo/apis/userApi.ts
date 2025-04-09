@@ -1,0 +1,108 @@
+// frontend-repo/apis/userApi.ts
+import axios from 'axios';
+import { getAuth, User as FirebaseUser } from 'firebase/auth';
+import { User } from '../apis/user';
+
+const API_URL = 'http://localhost:5000/api';
+
+export interface ApiResponse<T> {
+  data?: T;
+  error?: string;
+}
+
+export const fetchUserApi = async (): Promise<ApiResponse<User>> => {
+  try {
+    const auth = getAuth();
+    const currentUser: FirebaseUser | null = auth.currentUser;
+
+    if (!currentUser) {
+      console.error('No authenticated user found.');
+      return { error: 'No authenticated user found.' };
+    }
+
+    const idToken = await currentUser.getIdToken();
+    const uid = currentUser.uid;
+
+    const response = await axios.get<User>(
+      `${API_URL}/fetch-user-data?id=${uid}`,
+      {
+        headers: {
+          Authorization: `Bearer ${idToken}`,
+        },
+      }
+    );
+
+    return { data: response.data };
+  } catch (error: unknown) {
+    let errorMessage = 'Failed to fetch user data.';
+
+    if (axios.isAxiosError(error) && error.response) {
+      const serverError =
+        error.response.data?.error || error.response.data?.message;
+
+      if (serverError) {
+        errorMessage = serverError;
+      }
+
+      console.log('API Error:', errorMessage, error.response.status);
+      return { error: errorMessage };
+    } else if (error instanceof Error) {
+      console.log('Unexpected Error:', error.message);
+      return { error: error.message };
+    } else {
+      console.log('Unknown error occurred while fetching user');
+      return { error: 'Unknown error occurred.' };
+    }
+  }
+};
+
+export const createOrUpdateUserApi = async (): Promise<ApiResponse<User>> => {
+  try {
+    const auth = getAuth();
+    const currentUser: FirebaseUser | null = auth.currentUser;
+
+    if (!currentUser) {
+      return { error: 'No authenticated user found.' };
+    }
+
+    const idToken = await currentUser.getIdToken();
+
+    const payload = {
+      id: currentUser.uid,
+      email: currentUser.email,
+      name: currentUser.email?.split('@')[0] || 'Anonymous',
+    };
+
+    const response = await axios.post<User>(
+      `${API_URL}/update-user-data`,
+      payload,
+      {
+        headers: {
+          Authorization: `Bearer ${idToken}`,
+        },
+      }
+    );
+
+    return { data: response.data };
+  } catch (error: unknown) {
+    let errorMessage = 'Failed to create/update user.';
+
+    if (axios.isAxiosError(error) && error.response) {
+      const serverError =
+        error.response.data?.error || error.response.data?.message;
+
+      if (serverError) {
+        errorMessage = serverError;
+      }
+
+      console.log('API Error:', errorMessage, error.response.status);
+      return { error: errorMessage };
+    } else if (error instanceof Error) {
+      console.log('Unexpected Error:', error.message);
+      return { error: error.message };
+    } else {
+      console.log('Unknown error occurred while creating/updating user');
+      return { error: 'Unknown error occurred.' };
+    }
+  }
+};
