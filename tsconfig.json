@@ -1,0 +1,3 @@
+{
+    "extends": "./backend-repo/functions/tsconfig.json"
+  }

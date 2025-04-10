@@ -3,7 +3,8 @@ import axios from 'axios';
 import { getAuth, User as FirebaseUser } from 'firebase/auth';
 import { User } from '../apis/user';
 
-const API_URL = 'http://localhost:5000/api';
+//const API_URL = 'http://localhost:5000/api';
+const API_URL = 'http://127.0.0.1:5001/ebuddy-bd4a1/us-central1/api';
 
 export interface ApiResponse<T> {
   data?: T;
