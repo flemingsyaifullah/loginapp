@@ -28,6 +28,9 @@ Thumbs.db
 
 # Turborepo cache
 turbo/
+.turbo/
+.turbo/cookies/
+.turbo/daemon/*.log.*
 
 # Log files
 *.log
@@ -41,4 +44,4 @@ firebase-debug.log
 firebase-debug.*.log
 firebase-export/
 
-backend-repo/config/firebaseServiceAccount.json
+apps/backend-repo/config/firebaseServiceAccount.json
