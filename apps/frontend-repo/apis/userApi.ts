@@ -1,10 +1,25 @@
 // frontend-repo/apis/userApi.ts
 import axios from 'axios';
 import { getAuth, User as FirebaseUser } from 'firebase/auth';
-import { User } from '../apis/user';
+import { User } from '@shared/user';
 
-//const API_URL = 'http://localhost:5000/api';
-const API_URL = 'http://127.0.0.1:5001/ebuddy-bd4a1/us-central1/api';
+const EXPRESS_URL = 'http://localhost:5000/api';
+const EMULATOR_URL = 'http://localhost:5001/ebuddy-bd4a1/us-central1/api';
+
+let resolvedApiUrl: string | null = null;
+
+const getSmartApiUrl = async (): Promise<string> => {
+  if (resolvedApiUrl) return resolvedApiUrl;
+
+  try {
+    await axios.get(`${EMULATOR_URL}/health-check`);
+    resolvedApiUrl = EMULATOR_URL;
+  } catch {
+    resolvedApiUrl = EXPRESS_URL;
+  }
+
+  return resolvedApiUrl;
+};
 
 export interface ApiResponse<T> {
   data?: T;
@@ -23,6 +38,7 @@ export const fetchUserApi = async (): Promise<ApiResponse<User>> => {
 
     const idToken = await currentUser.getIdToken();
     const uid = currentUser.uid;
+    const API_URL = await getSmartApiUrl();
 
     const response = await axios.get<User>(
       `${API_URL}/fetch-user-data?id=${uid}`,
@@ -67,6 +83,7 @@ export const createOrUpdateUserApi = async (): Promise<ApiResponse<User>> => {
     }
 
     const idToken = await currentUser.getIdToken();
+    const API_URL = await getSmartApiUrl();
 
     const payload = {
       id: currentUser.uid,

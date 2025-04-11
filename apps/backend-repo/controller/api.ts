@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { updateUser, fetchUser } from '../repository/userCollection';
-import { User } from '../entities/user';
+import { User } from '@shared/user';
 
 export const updateUserData = async (req: Request, res: Response): Promise<void> => {
   try {

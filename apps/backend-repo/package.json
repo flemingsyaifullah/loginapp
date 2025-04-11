@@ -4,11 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "dev": "ts-node-dev --respawn ./core/app.ts",
-  "copyfirebaseaccount": "copy config\\firebaseServiceAccount.json dist\\config\\",
+  "dev": "cross-env NODE_ENV=development ts-node-dev --respawn core/app.ts",
+  "copyfirebaseaccount": "copy config\\firebaseServiceAccount.json dist\\apps\\backend-repo\\config\\",
   "functions:build": "cd functions && tsc",
-  "build": "tsc && npm run copyfirebaseaccount && npm run functions:build",
-  "emulators": "npm run build && npm run copyfirebaseaccount && npm run functions:build && set DOTENV_CONFIG_PATH=.env && npx --node-options=\"-r dotenv/config\" firebase emulators:start --only functions"
+  "build": "tsc && npm run functions:build"
   },
   "keywords": [],
   "author": "",

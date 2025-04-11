@@ -1,7 +1,7 @@
 // actions.ts
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { fetchUserApi } from '../apis/userApi'; 
-import { User } from '../apis/user';
+import { User } from '@shared/user';
 
 export const fetchUserData = createAsyncThunk<User, void>(
   'user/fetchUserData',

@@ -1,7 +1,7 @@
 // reducers.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { fetchUserData } from './actions'; // Meng-import fetchUserData dari actions.ts
-import { User } from '../apis/user';
+import { User } from '@shared/user';
 
 interface UserState {
   user: User | null;
@@ -9,7 +9,6 @@ interface UserState {
   error: string | null;
 }
 
-// Inisialisasi state awal
 const initialState: UserState = {
   user: null,
   loading: false,
