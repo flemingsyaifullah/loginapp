@@ -12,7 +12,7 @@ and simple user CRUD using Firestore database**
 
 **FOLDER STRUCTURE (USING TURBOREPO)**
 
-![image](https://github.com/user-attachments/assets/68ff7d04-dab3-4720-a949-0cdd86637ba4)
+![image](https://github.com/user-attachments/assets/85813cda-921b-4b5e-8f94-a72a89f0ac83)
 
 **HOW TO RUN :**
 
@@ -31,12 +31,11 @@ and simple user CRUD using Firestore database**
 
 **IF USING EMULATOR AT THE BACKEND :**
 
-5. go to `loginapp/apps/backend-repo` run `npx firebase use ebuddy-bd4a1`
-   (better use your own firebase project name)
+5. go to `loginapp/apps/backend-repo` run `npx firebase use loginapp-1bf76`
 
 6. run `npm run build && firebase emulators:start --only functions`
 
-7. open another cmd go to `loginapp/apps/frontend-repo` run `npm run dev` to up frontend
+7. open another cmd go to `loginapp/apps/frontend-repo` run `npm run dev` to up UI
 
 8. open browser `http://localhost:3000/` to test
 
@@ -44,16 +43,9 @@ and simple user CRUD using Firestore database**
 
 **NOTES : 
 
-Firebase project credential file `"firebase-account.json"` you can find at folder 
-`loginapp/packages/shared/config` 
+Firebase project private key sent separately at the email. Put inside backend-repo folder
 
-- firestoreAccount section : to access Firestore user collection
-- firebaseAuthAccount section : to access Firebase auth when login/register/logout at login form
-- backendApi section : backend endpoint url for turborepo and emulator
-
-(better use your own firebase project credential)
-
-Default port use for emulator can find at backend-repo/firebase.json 
+Default port use for emulator can find at loginapp/apps/backend-repo/firebase.json 
 
 ```json
 {
