@@ -1,4 +1,4 @@
-**Simple login/register/logout using Firebase auth
+![image](https://github.com/user-attachments/assets/7d4f43ca-854a-4d98-a7ad-c1bf3c6cc1fc)**Simple login/register/logout using Firebase auth
 and simple user CRUD using Firestore database**
 
 **TECH-STACK :**
@@ -12,16 +12,7 @@ and simple user CRUD using Firestore database**
 
 **FOLDER STRUCTURE (USING TURBOREPO)**
 
-'''oginapp (Root Folder)
-├── apps/
-│   ├── frontend-repo/
-│   └── backend-repo/
-└── packages/
-└── shared/
-├── config/
-│   └── firebase-account.json
-└── src/
-└── user.ts
+![image](https://github.com/user-attachments/assets/68ff7d04-dab3-4720-a949-0cdd86637ba4)
 
 **HOW TO RUN :**
 
