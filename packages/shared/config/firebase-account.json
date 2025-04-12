@@ -1,0 +1,28 @@
+{
+  "firestoreAccount": {
+    "type": "service_account",
+  "project_id": "<fill>",
+  "private_key_id": "<fill>",
+  "private_key": "<fill>",
+  "client_email": "<fill>",
+  "client_id": "<fill>",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "<fill>",
+  "universe_domain": "googleapis.com"
+  },
+  "firebaseAuthAccount": {
+    "apiKey": "<fill>",
+    "authDomain": "<fill>",
+    "projectId": "<fill>",
+    "storageBucket": "<fill>",
+    "messagingSenderId": "<fill>",
+    "appId": "<fill>",
+    "measurementId": "<fill>"
+  },
+  "backendApi": {
+    "expressUrl": "http://localhost:5000/api",
+    "emulatorUrl": "http://localhost:5001/<your-project-name>/us-central1/api"
+  }
+}
