@@ -104,8 +104,8 @@ const LoginForm = () => {
             color="primary"
             sx={{ mt: 3, mb: 2 }}
           >
-            {isRegistering ? 'Register (*also save into user collection at Firestore)' 
-            : 'Sign In (*also save into user collection at Firestore if not exist)'}
+            {isRegistering ? 'Register' 
+            : 'Sign In'}
           </Button>
           <Button
             fullWidth

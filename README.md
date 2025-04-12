@@ -1,6 +1,26 @@
 **Simple login/register/logout using Firebase auth
 and simple user CRUD using Firestore database**
 
+**PROCESS**
+
+- User login or register at login form using email and password. This process handle by
+Firebase authentication
+- System will also save simple user information
+[name : taken from email name
+email
+id : taken from Firebase authentication user UID]
+by call backend api. 
+
+- Every calling backend endpoint that register at userRoutes (create user and fetch user) will through middleware.
+
+-middleware receive token from firebase authentication then check validity of the token using firebase admin.
+
+- After login or register success then directed to user info page
+- There is button to fetch user information
+- There is button to logout
+- Finish
+
+
 **TECH-STACK :**
 
 - frontend : React with Next framework using typescript

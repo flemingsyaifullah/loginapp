@@ -59,7 +59,7 @@ const UserInfoCard = () => {
   return (
     <Paper elevation={3} sx={{ padding: 4, maxWidth: 500, margin: 'auto', mt: 5 }}>
       <Typography variant="h5" gutterBottom>
-        User Information (*retrieve from user collection at Firestore)
+        User Information
       </Typography>
 
       <Stack direction="row" spacing={2} sx={{ mb: 3 }}>
@@ -85,9 +85,9 @@ const UserInfoCard = () => {
 
       {user && (
         <Box>
-          <Typography>Name (*taken from email name): {user.name}</Typography>
-          <Typography>Email: {user.email}</Typography>
-          <Typography>UID: {user.id}</Typography>
+          <Typography>Name : {user.name}</Typography>
+          <Typography>Email : {user.email}</Typography>
+          <Typography>UID : {user.id}</Typography>
         </Box>
       )}
     </Paper>
