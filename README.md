@@ -13,7 +13,7 @@ by call backend api.
 
 - Every calling backend endpoint that register at userRoutes (create user and fetch user) will through middleware.
 
--middleware receive token from firebase authentication then check validity of the token using firebase admin.
+- Middleware receive token from firebase authentication then check validity of the token using firebase admin.
 
 - After login or register success then directed to user info page
 - There is button to fetch user information
