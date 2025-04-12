@@ -2,10 +2,10 @@
 import axios from 'axios';
 import { getAuth, User as FirebaseUser } from 'firebase/auth';
 import { User } from '@shared/src/user';
-import firebaseConfig from '@shared/config/firebase-account.json';
+import firebaseConfig from '../config/apiUrlConfig';
 
-const EXPRESS_URL = firebaseConfig.backendApi.expressUrl;
-const EMULATOR_URL = firebaseConfig.backendApi.emulatorUrl;
+const EXPRESS_URL = firebaseConfig.expressUrl;
+const EMULATOR_URL = firebaseConfig.emulatorUrl;
 
 let resolvedApiUrl: string | null = null;
 

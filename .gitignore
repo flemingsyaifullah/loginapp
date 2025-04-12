@@ -44,4 +44,4 @@ firebase-debug.log
 firebase-debug.*.log
 firebase-export/
 
-#packages/shared/config/firebase-account.json
+apps/backend-repo/loginapp-private-key.json
