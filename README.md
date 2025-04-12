@@ -12,8 +12,16 @@ and simple user CRUD using Firestore database**
 
 **FOLDER STRUCTURE (USING TURBOREPO)**
 
-![image](https://github.com/user-attachments/assets/66bd5514-6f2f-4b31-bd46-a62f402677d3)
-
+oginapp (Root Folder)
+├── apps/
+│   ├── frontend-repo/
+│   └── backend-repo/
+└── packages/
+└── shared/
+├── config/
+│   └── firebase-account.json
+└── src/
+└── user.ts
 
 **HOW TO RUN :**
 
