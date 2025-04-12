@@ -43,7 +43,7 @@ and simple user CRUD using Firestore database**
 
 **NOTES : 
 
-- Firebase project private key sent separately at the email. Put inside backend-repo folder
+- Firebase project private key `loginapp-private-key.json` sent separately at the email. Put inside loginapp/apps/backend-repo/
 
 - Default port use for emulator can find at loginapp/apps/backend-repo/firebase.json 
 
