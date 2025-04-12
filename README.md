@@ -44,6 +44,10 @@ and simple user CRUD using Firestore database**
 **NOTES : 
 
 - Firebase project private key `loginapp-private-key.json` sent separately at the email. Put inside loginapp/apps/backend-repo/
+  
+- Firebase config for login authentication can find at loginapp/apps/frontend-repo/config/firebaseConfig.ts
+  
+- Backend api url config can find at loginapp/apps/frontend-repo/config/apiUrlConfig.ts
 
 - Default port use for emulator can find at loginapp/apps/backend-repo/firebase.json 
 
@@ -66,7 +70,4 @@ and simple user CRUD using Firestore database**
     "singleProjectMode": true
   }
 }
-
-- Firebase config for login authentication can find at loginapp/apps/frontend-repo/config/firebaseConfig.ts
-- Backend api url config can find at loginapp/apps/frontend-repo/config/apiUrlConfig.ts
 
