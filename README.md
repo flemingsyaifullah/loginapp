@@ -67,3 +67,6 @@ and simple user CRUD using Firestore database**
   }
 }
 
+- Firebase config for login authentication can find at loginapp/apps/frontend-repo/config/firebaseConfig.ts
+- Backend api url config can find at loginapp/apps/frontend-repo/config/apiUrlConfig.ts
+
