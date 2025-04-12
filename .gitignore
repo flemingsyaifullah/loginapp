@@ -21,7 +21,6 @@ Thumbs.db
 
 # Firebase
 .firebase/
-.firebaserc
 
 # VSCode
 .vscode/

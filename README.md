@@ -37,23 +37,26 @@ by call backend api.
 **HOW TO RUN :**
 
 1. open cmd
+
 2. clone source code
-3. go to source code root folder (loginapp)
-4. run `npm install`
+
+3. Firebase project private key `loginapp-private-key.json` sent separately at the email. Put inside loginapp/apps/backend-repo/
+
+4. go to source code root folder (loginapp)
+
+5. run `npm install`
 
 **IF USING TURBOBACK :**
 
-5. run `npm run dev`
+6. run `npm run dev`
 
-6. open browser `http://localhost:3000/` to test
+7. open browser `http://localhost:3000/` to test
 
-7. finish
+8. finish
 
 **IF USING EMULATOR AT THE BACKEND :**
 
-5. go to `loginapp/apps/backend-repo` run `npx firebase use loginapp-1bf76`
-
-6. run `npm run build && firebase emulators:start --only functions`
+6. go to `loginapp/apps/backend-repo` run `npm run build && firebase emulators:start --only functions`
 
 7. open another cmd go to `loginapp/apps/frontend-repo` run `npm run dev` to up UI
 
@@ -62,8 +65,6 @@ by call backend api.
 9. finish
 
 **NOTES : 
-
-- Firebase project private key `loginapp-private-key.json` sent separately at the email. Put inside loginapp/apps/backend-repo/
   
 - Firebase config for login authentication at loginapp/apps/frontend-repo/config/firebaseConfig.ts
   
